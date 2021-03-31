@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<title></title>
+<script>
+
+//while loop
+var flag = true;
+var count = 0;
+while( flag == true){
+    if(count == 5){
+       flag = false;
+     }
+  count++;
+}
+document.write('<br>' + "while loop terminated with flag, count: " + count + '<br>');
+  
+  
+//while loop with break
+flag = true;
+count = 0;
+while( flag == true){
+    if(count == 5){
+        break;
+    }
+    count++;
+}
+document.write('<br>' + "while loop terminated with break, count: " + count + '<br>'); 
+  
+//labeled break
+var i = 1;
+var k = 5;
+outer:  
+while (i <= 5) {
+      k = 5;
+      while(k >= 1){
+          print("i : ${i} k : ${k}");
+          document.write('<br>' + "i: " + i + " k :" + k  + '<br>');
+             if (k == i ) {
+                 if (i == 3) {
+                     document.write("reached middle value" +'<br>');
+                     break outer;
+                 }
+                 print("inner terminating with i : ${i} k : ${k}");
+                 document.write("inner terminating with i: " + i +  "k :" + k +'<br>');
+              break ;
+          }
+             k--;
+         }
+      i++;
+}
+    
+  
+ //continue example
+var num = 1;
+var sum = 0;
+while(num <= 15) { 
+    if (num % 2 != 0) {
+        num++;
+        continue;  //pass the rest of the loop
+     } 
+    sum = sum + num;
+    num++;
+} 
+print("\nsum of even values from ${num} to ${limit} is ${sum}");
+document.write('<br>' + "sum of even values from 1 to 15 is " + sum  + '<br>');  
+
+//for loop
+flag = true;
+count = 0;
+for( ;flag == true;){
+    if(count == 5){
+       flag = false;
+     }
+  count++;
+}
+document.write('<br>' + "for loop terminated with flag, count: " + count + '<br>');
+
+
+//do while loop
+flag = false;
+count = 0;
+{
+    if(count == 5){
+       flag = false;
+     }
+  count++;
+}while( flag == true);
+document.write('<br>' + "do while loop terminated with flag, count: " + count + '<br>');
+
+</script>
+<body>
+</body>
+</html>
