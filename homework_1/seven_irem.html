@@ -1,0 +1,57 @@
+<script>
+
+//function foo to print a pair
+function foo(k) {
+     document.write("Key: " + key + " Value: " + arr[key] + '<br>');
+}
+
+// initialize array
+var arr = { "Name": "Harris", "City": "Los Angeles", "Age": 42, "Salary": "5420$"}; 
+//print initial form
+document.write("**Initial Associative Array**" + '<br>');
+for(var key in arr)
+{
+     document.write("Key: " + key + " Value: " + arr[key] + '<br>');
+}
+
+//get value for key age
+document.write('<br>' + "Value for key Age: " + arr["Age"] + '<br>');
+//get value for nonexistent key
+document.write('<br>' + "Value for key Car: " + arr["Car"] + '<br>');
+document.write('<br>');
+
+arr["Country"] = "USA";          //add a new element
+arr.height = 184;                   //we can also add by using object notation
+delete arr['Age'];                     //remove an element
+delete arr['Car'];             //remove nonexistent element
+arr["City"] = "New York";         //modify a value
+
+//search existence of Key Salary
+keybool = 'Salary' in arr;
+document.write("Existence of Key Salary: " + keybool + '<br>');
+
+//search existence of Value 42
+valbool = false
+for (var prop in arr) {
+    if (arr.hasOwnProperty(prop) && arr[prop] === 42) {
+        valbool = true
+      }
+}
+document.write("Existence of Value 42: " + valbool + '<br>');
+//search existence of Value Harris
+for (var prop in arr) {
+    if (arr.hasOwnProperty(prop) && arr[prop] === "Harris") {
+        valbool = true
+      }
+}
+document.write("Existence of Value Harris: " + valbool + '<br>');
+
+//print modified version in loop by foo
+document.write('<br>' + "**Modified Associative Array**" + '<br>');
+for(var key in arr)
+{
+     foo(key);
+}
+
+</script>
+<!-- edit your html here -->
